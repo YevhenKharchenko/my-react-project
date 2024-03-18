@@ -18,10 +18,10 @@ const Form = ({
       <h1>Please login to your account!</h1>
       <LoginForm onLogin={handleLogin} />
       <SearchBar />
-      <>
+      <div>
         <p>Selected language: {lang}</p>
         <LangSwitcher value={lang} onSelect={setLang} />
-      </>
+      </div>
       <SelectCoffee
         coffeeSize={coffeeSize}
         handleSizeChange={handleSizeChange}

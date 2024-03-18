@@ -35,8 +35,8 @@ const App = () => {
     setCoffeeSize(value);
   };
 
-  const handleChange = (checked) => {
-    setHasAccepted(checked);
+  const handleChange = (isChecked) => {
+    setHasAccepted(isChecked);
   };
 
   const handleLogin = (userData) => {
