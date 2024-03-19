@@ -1,12 +1,12 @@
 import Task from "./Task";
 
-const ToDoList = ({ tasks }) => {
+const ToDoList = ({ tasks, onDelete }) => {
   return (
     <ul>
       {tasks.map((task) => {
         return (
           <li key={task.id}>
-            <Task data={task} />
+            <Task data={task} onDelete={onDelete} />
           </li>
         );
       })}

@@ -1,9 +1,11 @@
+import { nanoid } from "nanoid";
+
 const ToDoForm = ({ onAdd }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    formData.append("id", Date.now());
+    formData.append("id", nanoid());
     const formObj = Object.fromEntries(formData.entries());
     onAdd(formObj);
     form.reset();

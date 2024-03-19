@@ -27,6 +27,10 @@ const App = () => {
     });
   };
 
+  const deleteTask = (taskId) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+  };
+
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
@@ -58,7 +62,7 @@ const App = () => {
       <FeedbackForm />
       <ToDoForm onAdd={addTask} />
       <TaskSearchBar value={filter} onFilter={setFilter} />
-      <ToDoList tasks={visibleTasks} />
+      <ToDoList tasks={visibleTasks} onDelete={deleteTask} />
       <ImageInput />
     </>
   );
