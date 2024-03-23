@@ -1,70 +1,35 @@
-import Button from "./components/Button";
-import Form from "./components/Form";
-import FeedbackForm from "./components/FeedbackForm";
-import ToDoList from "./components/ToDoList";
-import ToDoForm from "./components/ToDoForm";
-import TaskSearchBar from "./components/TaskSearchBar";
-import ImageInput from "./components/ImageInput";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import ArticleList from "./components/ArticleList";
+import SearchForm from "./components/SearchForm";
+import Loader from "./components/Loader";
+import { fetchArticlesWithTopic } from "./articles-api.js";
 
 const App = () => {
-  const [lang, setLang] = useState("uk");
-  const [coffeeSize, setCoffeeSize] = useState("sm");
-  const [hasAccepted, setHasAccepted] = useState(false);
-  const [tasks, setTasks] = useState(() => {
-    const savedTasks = localStorage.getItem("tasks");
-    return JSON.parse(savedTasks) ?? [];
-  });
-  const [filter, setFilter] = useState("");
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-  const visibleTasks = tasks.filter((task) =>
-    task.task.toLowerCase().includes(filter.toLowerCase())
-  );
-
-  const addTask = (newTask) => {
-    setTasks((prevTasks) => {
-      return [...prevTasks, newTask];
-    });
-  };
-
-  const deleteTask = (taskId) => {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
-  };
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
-
-  const handleSizeChange = (value) => {
-    setCoffeeSize(value);
-  };
-
-  const handleChange = (isChecked) => {
-    setHasAccepted(isChecked);
-  };
-
-  const handleLogin = (userData) => {
-    console.log(userData);
+  const handleSearch = async (topic) => {
+    try {
+      setArticles([]);
+      setError(false);
+      setLoading(true);
+      const data = await fetchArticlesWithTopic(topic);
+      setArticles(data);
+    } catch (error) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <>
-      <Button />
-      <Form
-        handleLogin={handleLogin}
-        lang={lang}
-        setLang={setLang}
-        coffeeSize={coffeeSize}
-        handleSizeChange={handleSizeChange}
-        hasAccepted={hasAccepted}
-        handleChange={handleChange}
-      />
-      <FeedbackForm />
-      <ToDoForm onAdd={addTask} />
-      <TaskSearchBar value={filter} onFilter={setFilter} />
-      <ToDoList tasks={visibleTasks} onDelete={deleteTask} />
-      <ImageInput />
-    </>
+    <div>
+      <SearchForm onSearch={handleSearch} />
+      {loading && <Loader />}
+      {error && <Error />}
+      {articles.length > 0 && <ArticleList items={articles} />}
+    </div>
   );
 };
 
