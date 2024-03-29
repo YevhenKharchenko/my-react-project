@@ -1,5 +1,3 @@
-// src/components/UserMenu.jsx
-
 import { useUser } from "../hooks/userContext.jsx";
 
 export const UserMenu = () => {
