@@ -1,6 +1,9 @@
-import React from "react";
+import { useLocation } from "react-router-dom";
 
 const Mission = () => {
+  const location = useLocation();
+  console.log(location);
+
   return <div>Mission</div>;
 };
 
