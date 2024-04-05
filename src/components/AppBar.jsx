@@ -1,22 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { StatusFilter } from "./StatusFilter";
+import { TaskCounter } from "./TaskCounter";
 
-const AppBar = () => {
+export const AppBar = () => {
   return (
     <header>
-      <p>
-        <span role="img" aria-label="computer icon">
-          💻
-        </span>{" "}
-        GoMerch Store
-      </p>
-
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/products">Products</NavLink>
-      </nav>
+      <section>
+        <h2>Tasks</h2>
+        <TaskCounter />
+      </section>
+      <section>
+        <h2>Filter by status</h2>
+        <StatusFilter />
+      </section>
     </header>
   );
 };
-
-export default AppBar;
