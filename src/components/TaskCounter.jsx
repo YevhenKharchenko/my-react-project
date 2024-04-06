@@ -2,7 +2,7 @@
 
 // Імпортуємо хук
 import { useSelector } from "react-redux";
-import { getTasks } from "../../redux/selectors";
+import { getTasks } from "../redux/selectors";
 
 export const TaskCounter = () => {
   // Отримуємо масив завдань із стану Redux

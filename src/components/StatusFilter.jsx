@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setStatusFilter } from "../redux/actions";
 // Імпортуємо об'єкт значень фільтра
 import { statusFilters } from "../redux/constants";
-import { getStatusFilter } from "..redux/selectors";
+import { getStatusFilter } from "../redux/selectors";
 import { Button } from "./Button";
 
 export const StatusFilter = () => {
