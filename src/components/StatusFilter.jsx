@@ -6,13 +6,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { setStatusFilter } from "../redux/actions";
 // Імпортуємо об'єкт значень фільтра
 import { statusFilters } from "../redux/constants";
+import { getStatusFilter } from "..redux/selectors";
 import { Button } from "./Button";
 
 export const StatusFilter = () => {
   // Отримуємо посилання на функцію відправки екшенів
   const dispatch = useDispatch();
 
-  const filter = useSelector((state) => state.statusFilter);
+  const filter = useSelector(getStatusFilter);
 
   // Викликаємо генератор екшену та передаємо значення фільтра
   // Відправляємо результат - екшен зміни фільтра
