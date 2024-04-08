@@ -14,7 +14,7 @@ const Counter = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const value = e.currentTarget.elements.name.value;
+    const value = e.target.elements.name.value;
     dispatch(addTask(value));
     e.currentTarget.reset();
   };
