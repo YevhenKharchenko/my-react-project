@@ -16,7 +16,7 @@ const Counter = () => {
     e.preventDefault();
     const value = e.target.elements.name.value;
     dispatch(addTask(value));
-    e.currentTarget.reset();
+    e.target.reset();
   };
 
   const handleDelete = (e) => {
