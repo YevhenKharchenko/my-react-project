@@ -9,7 +9,9 @@ export const addValue = () => {
 };
 
 export const reduceValue = () => {
-  return { type: "value/reduceCount" };
+  return {
+    type: "value/reduceCount",
+  };
 };
 
 export const addTask = (value) => {
