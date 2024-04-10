@@ -3,7 +3,7 @@
 // Імпортуємо функцію композиції редюсерів
 import { combineReducers } from "redux";
 
-const valueReducer = (state = 0, action) => {
+export const valueReducer = (state = 0, action) => {
   switch (action.type) {
     case "value/addCount":
       return state + 1;
@@ -16,7 +16,7 @@ const valueReducer = (state = 0, action) => {
 
 // Відповідає лише за оновлення властивості tasks
 // Тепер значенням параметра state буде масив завдань
-const tasksReducer = (state = [], action) => {
+export const tasksReducer = (state = [], action) => {
   switch (action.type) {
     case "tasks/addTask":
       return [...state, action.payload];
@@ -26,8 +26,3 @@ const tasksReducer = (state = [], action) => {
       return state;
   }
 };
-
-export const rootReducer = combineReducers({
-  value: valueReducer,
-  tasks: tasksReducer,
-});
