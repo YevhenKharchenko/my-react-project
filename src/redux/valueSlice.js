@@ -4,15 +4,15 @@ const valueSlice = createSlice({
   name: "value",
   initialState: 0,
   reducers: {
-    addValue(state, action) {
+    increment(state, action) {
       return state + 1;
     },
-    reduceValue(state, action) {
+    decrement(state, action) {
       return state - 1;
     },
   },
 });
 
-export const { addValue, reduceValue } = valueSlice.actions;
+export const { increment, decrement } = valueSlice.actions;
 
 export const valueReducer = valueSlice.reducer;

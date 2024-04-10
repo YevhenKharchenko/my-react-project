@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { addValue, reduceValue } from "../redux/valueSlice";
+import { increment, decrement } from "../redux/valueSlice";
 import { addTask, deleteTask } from "../redux/tasksSlice";
 import { getTasks, getValue } from "../redux/selectors";
 
@@ -10,7 +10,7 @@ const Counter = () => {
   const dispatch = useDispatch();
 
   const handleAddClick = () => {
-    dispatch(addValue());
+    dispatch(increment());
   };
 
   const handleSubmit = (e) => {
@@ -30,7 +30,7 @@ const Counter = () => {
       <button onClick={handleAddClick}>Add</button>
       <button
         onClick={() => {
-          dispatch(reduceValue());
+          dispatch(decrement());
         }}
       >
         Reduce
