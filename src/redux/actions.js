@@ -1,29 +1,19 @@
 // src/redux/actions.js
 
 import { nanoid } from "nanoid";
+import { createAction } from "@reduxjs/toolkit";
 
-export const addValue = () => {
-  return {
-    type: "value/addCount",
-  };
-};
+export const addValue = createAction("value/increment");
 
-export const reduceValue = () => {
-  return {
-    type: "value/reduceCount",
-  };
-};
+export const reduceValue = createAction("value/decrement");
 
-export const addTask = (value) => {
+export const addTask = createAction("tasks/addTask", (text) => {
   return {
-    type: "tasks/addTask",
-    payload: { text: value, id: nanoid() },
+    payload: {
+      text,
+      id: nanoid(),
+    },
   };
-};
+});
 
-export const deleteTask = (id) => {
-  return {
-    type: "tasks/deleteTask",
-    payload: id,
-  };
-};
+export const deleteTask = createAction("tasks/deleteTask");

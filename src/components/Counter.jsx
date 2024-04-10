@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { addValue, reduceValue, addTask, deleteTask } from "../redux/actions";
+import { addValue, reduceValue } from "../redux/valueSlice";
+import { addTask, deleteTask } from "../redux/tasksSlice";
 import { getTasks, getValue } from "../redux/selectors";
 
 const Counter = () => {

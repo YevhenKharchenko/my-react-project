@@ -1,28 +1,23 @@
 // src/redux/reducers.js
+import { createReducer } from "@reduxjs/toolkit";
+import { addValue, reduceValue, addTask, deleteTask } from "./actions";
 
-// Імпортуємо функцію композиції редюсерів
-import { combineReducers } from "redux";
-
-export const valueReducer = (state = 0, action) => {
-  switch (action.type) {
-    case "value/addCount":
+export const valueReducer = createReducer(0, (builder) => {
+  builder
+    .addCase(addValue, (state, action) => {
       return state + 1;
-    case "value/reduceCount":
+    })
+    .addCase(reduceValue, (state, action) => {
       return state - 1;
-    default:
-      return state;
-  }
-};
+    });
+});
 
-// Відповідає лише за оновлення властивості tasks
-// Тепер значенням параметра state буде масив завдань
-export const tasksReducer = (state = [], action) => {
-  switch (action.type) {
-    case "tasks/addTask":
+export const tasksReducer = createReducer([], (builder) => {
+  builder
+    .addCase(addTask, (state, action) => {
       return [...state, action.payload];
-    case "tasks/deleteTask":
+    })
+    .addCase(deleteTask, (state, action) => {
       return state.filter((task) => task.id !== action.payload);
-    default:
-      return state;
-  }
-};
+    });
+});
