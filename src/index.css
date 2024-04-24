@@ -1,5 +1,9 @@
 /* src/index.css */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
   line-height: 1.5;
@@ -17,6 +21,7 @@ p {
 
 ul,
 ol {
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
@@ -24,4 +29,9 @@ ol {
 img {
   display: block;
   max-width: 100%;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
 }
