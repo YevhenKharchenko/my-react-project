@@ -9,7 +9,7 @@ function Modal({ handleModal }) {
           type="button"
           onClick={handleModal}
         >
-          c
+          close
           {/* <svg className={css.modalCloseIcon} width="28" height="28">
             <use href="./images/icons.svg#icon-x-close"></use>
           </svg> */}
@@ -20,6 +20,7 @@ function Modal({ handleModal }) {
             <li className={css.listItem}>
               <div className={css.imgWrapper}>
                 <img
+                  className={css.itemImg}
                   src="../../assets/honey.jpg"
                   alt=""
                   width={80}
@@ -30,6 +31,7 @@ function Modal({ handleModal }) {
                 <h3 className={css.itemTitle}>Мед квітковий натуральний</h3>
                 <p className={css.itemVolume}>0,25 л</p>
                 <div className={css.itemQuantityWrapper}>
+                  <p className={css.itemQuantityText}>Кількість</p>
                   <button className={css.quantityBtn} type="button">
                     -
                   </button>
@@ -39,6 +41,9 @@ function Modal({ handleModal }) {
                   </button>
                 </div>
                 <p className={css.itemPrice}>100 грн</p>
+                <button className={css.deleteBtn} type="button">
+                  del
+                </button>
               </div>
             </li>
             <li className={css.listItem}></li>
@@ -46,11 +51,18 @@ function Modal({ handleModal }) {
             <li className={css.listItem}></li>
           </ul>
         </div>
-        <a className={css.modalLink} href="">
-          &lt;- Повернутися до покупок
-        </a>
-        <p className={css.totalPrice}>250 грн</p>
-        <button className={css.modalSubmitBtn}>Оформити замовлення</button>
+        <div className={css.modalBottomWrapper}>
+          <div className={css.linkWrapper}>
+            <a className={css.modalLink} href="">
+              &lt;- Повернутися до покупок
+            </a>
+          </div>
+          <div className={css.modalSubmitWrapper}>
+            <p className={css.totalPrice}>250 грн</p>
+
+            <button className={css.modalSubmitBtn}>Оформити замовлення</button>
+          </div>
+        </div>
       </div>
     </div>
   );

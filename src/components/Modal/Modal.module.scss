@@ -5,8 +5,6 @@
   width: 100%;
   height: 100%;
   background-color: var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.4));
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modalContainer {
@@ -15,8 +13,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   //   width: 375px;
-  height: 100%;
-  padding: 32px 20px 40px 20px;
+  // height: 100%;
+  padding: 32px 20px 24px 20px;
   border-radius: 0;
   background-color: #fafafa;
 }
@@ -49,14 +47,22 @@
 
 .modalTitle {
   margin-bottom: 24px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #1f1b1a;
 }
 
 .listContainer {
   height: 556px;
   overflow-y: auto;
-  scrollbar-width: 4px;
-  scrollbar-color: rgb(250, 207, 90) #f4f4f4; /* Track color and thumb color */
+  // scrollbar-width: 4px;
+  // scrollbar-color: rgb(250, 207, 90) #f4f4f4; /* Track color and thumb color */
   margin-bottom: 20px;
+  border-bottom: 1px solid #858585;
 }
 
 .listContainer::-webkit-scrollbar {
@@ -75,7 +81,6 @@
   width: 335px;
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid #858585;
 }
 
 .listItem {
@@ -85,7 +90,7 @@
   border-radius: 24px;
   background-color: #f6f6f6;
   display: flex;
-  border-radius: 16px;
+  border-radius: 24px;
   overflow: hidden;
 
   &:last-child {
@@ -94,12 +99,18 @@
 }
 
 .imgWrapper {
-  border-radius: 16px;
+  border-radius: 24px;
   overflow: hidden;
+}
+
+.itemImg {
+  width: 80px;
+  height: 80px;
 }
 
 .descriptionWrapper {
   padding: 16px;
+  position: relative;
 }
 
 .itemTitle {
@@ -129,6 +140,10 @@
   margin-bottom: 8px;
 }
 
+.itemQuantityText {
+  display: none;
+}
+
 .quantityBtn {
   width: 28px;
   height: 28px;
@@ -136,6 +151,13 @@
   border-radius: 50%;
   border-color: grey;
   outline: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #1f1b1a;
 }
 
 .itemPrice {
@@ -147,6 +169,21 @@
   color: #1f1b1a;
 }
 
+.deleteBtn {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.linkWrapper {
+  margin-bottom: 12px;
+}
+
 .modalLink {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
@@ -154,7 +191,6 @@
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #1f1b1a;
-  margin-bottom: 12px;
 }
 
 .totalPrice {
@@ -182,4 +218,223 @@
   height: 48px;
   outline: none;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .modalContainer {
+    // width: 672px;
+    // height: 100%;
+    padding: 48px;
+    border-radius: 24px;
+    background-color: #fafafa;
+  }
+
+  .modalCloseBtn {
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .modalTitle {
+    margin-bottom: 32px;
+    font-size: 32px;
+  }
+
+  .listContainer {
+    height: 628px;
+    overflow-y: auto;
+    margin-bottom: 24px;
+  }
+
+  .list {
+    width: 576px;
+  }
+
+  .listItem {
+    height: 216px;
+    width: 576px;
+    margin-bottom: 24px;
+    border-radius: 24px;
+  }
+
+  .imgWrapper {
+    border-radius: 24px;
+  }
+
+  .itemImg {
+    width: 204px;
+    height: 216px;
+  }
+
+  .itemTitle {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  .itemVolume {
+    margin-bottom: 16px;
+  }
+
+  .itemQuantityWrapper {
+    gap: 16px;
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 1.55556;
+  }
+
+  .quantityBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    line-height: 1.55556;
+  }
+
+  .deleteBtn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .modalBottomWrapper {
+  }
+
+  .linkWrapper {
+    margin-bottom: 16px;
+  }
+
+  .modalSubmitWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .totalPrice {
+    text-align: right;
+    margin-bottom: 0;
+  }
+
+  .modalSubmitBtn {
+    width: 255px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .modalContainer {
+    // width: 1216px;
+    // height: 100%;
+    padding: 64px;
+  }
+
+  .modalTitle {
+    margin-bottom: 64px;
+    font-size: 80px;
+  }
+
+  .listContainer {
+    height: 536px;
+    margin-bottom: 32px;
+  }
+
+  .list {
+    width: 1088px;
+  }
+
+  .listItem {
+    height: 216px;
+    width: 1088px;
+  }
+
+  .itemImg {
+    width: 216px;
+  }
+
+  .descriptionWrapper {
+    flex-grow: 1;
+  }
+
+  .itemTitle {
+    font-size: 24px;
+    line-height: 1.33333;
+  }
+
+  .itemVolume {
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 1.55556;
+  }
+
+  .itemQuantityWrapper {
+    margin-bottom: 18px;
+    line-height: 1.55556;
+  }
+
+  .itemQuantityText {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.55556;
+    letter-spacing: 0.04em;
+    color: #1f1b1a;
+    margin-right: 32px;
+  }
+
+  .quantityBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    line-height: 1.55556;
+  }
+
+  .itemPrice {
+    font-size: 18px;
+    line-height: 1.55556;
+  }
+
+  .deleteBtn {
+    width: 28px;
+    height: 28px;
+    bottom: 24px;
+    right: 24px;
+  }
+
+  .modalBottomWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .linkWrapper {
+    margin-bottom: 0;
+  }
+
+  .modalLink {
+    font-size: 18px;
+    line-height: 1.55556;
+  }
+
+  .modalSubmitWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .totalPrice {
+    font-size: 24px;
+    line-height: 1.33333;
+    text-align: right;
+    margin-bottom: 0;
+  }
+
+  .modalSubmitBtn {
+    font-size: 18px;
+    line-height: 1.55556;
+    width: 279px;
+    height: 52px;
+  }
 }
