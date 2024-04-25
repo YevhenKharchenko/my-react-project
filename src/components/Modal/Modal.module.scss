@@ -270,6 +270,10 @@
     height: 216px;
   }
 
+  .descriptionWrapper {
+    padding: 16px 16px 16px 24px;
+  }
+
   .itemTitle {
     font-size: 20px;
     line-height: 1.4;
@@ -353,6 +357,7 @@
   }
 
   .descriptionWrapper {
+    padding: 24px 24px 24px 32px;
     flex-grow: 1;
   }
 

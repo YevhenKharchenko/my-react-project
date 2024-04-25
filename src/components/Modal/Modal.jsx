@@ -21,7 +21,7 @@ function Modal({ handleModal }) {
               <div className={css.imgWrapper}>
                 <img
                   className={css.itemImg}
-                  src="../../assets/honey.jpg"
+                  src="../../../src/assets/honey.jpg"
                   alt=""
                   width={80}
                   height={80}
