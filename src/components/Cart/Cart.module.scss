@@ -17,18 +17,19 @@
   padding: 32px 20px 24px 20px;
   padding-right: 0;
   border-radius: 0;
-  background-color: #fafafa;
+  background-color: #ffffff;
 
   @media screen and (min-width: 768px) {
     // width: 672px;
     padding: 48px;
+    padding-right: 32px;
     border-radius: 24px;
-    background-color: #fafafa;
   }
 
   @media screen and (min-width: 1440px) {
     // width: 1216px;
     padding: 64px;
+    padding-right: 48px;
   }
 }
 
@@ -90,20 +91,17 @@
   height: 556px;
   width: 355px;
   overflow-y: auto;
-  margin-bottom: 20px;
   // scrollbar-width: 4px;
   // scrollbar-color: rgb(250, 207, 90) #f4f4f4; /* Track color and thumb color */
 
   @media screen and (min-width: 768px) {
     height: 628px;
     width: 592px;
-    margin-bottom: 24px;
   }
 
   @media screen and (min-width: 1440px) {
     height: 536px;
     width: 1106px;
-    margin-bottom: 32px;
   }
 }
 
@@ -121,22 +119,6 @@
   background-color: #facf5a;
   height: 200px;
   border-radius: 6px;
-}
-
-.listBorderWrapper {
-  height: 556px;
-  width: 335px;
-  border-bottom: 1px solid #858585;
-
-  @media screen and (min-width: 768px) {
-    height: 628px;
-    width: 576px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    height: 536px;
-    width: 1088px;
-  }
 }
 
 .list {
@@ -367,9 +349,6 @@
 .deleteBtn {
   width: 24px;
   height: 24px;
-  // position: absolute;
-  // bottom: 16px;
-  // right: 16px;
   background-color: transparent;
   outline: none;
   border: none;
@@ -385,17 +364,34 @@
   }
 }
 
+.listBorder {
+  height: 1px;
+  width: 335px;
+  background-color: #858585;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 576px;
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1088px;
+    margin-bottom: 32px;
+  }
+}
+
 .modalBottomWrapper {
   padding-right: 20px;
 
   @media screen and (min-width: 768px) {
-    padding-right: 0;
+    padding-right: 16px;
   }
 
   @media screen and (min-width: 1440px) {
     display: flex;
     justify-content: space-between;
-    padding-right: 0;
+    padding-right: 16px;
   }
 }
 
@@ -469,6 +465,7 @@
 }
 
 .modalSubmitBtn {
+  cursor: pointer;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -501,5 +498,105 @@
     line-height: 1.55556;
     width: 279px;
     height: 52px;
+  }
+}
+
+.backgroundWrapper {
+  width: 335px;
+  height: 256px;
+  margin-top: 164px;
+  margin-bottom: 24px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: 768px) {
+    width: 576px;
+    height: 404px;
+    margin-top: 64px;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 24px;
+  }
+}
+
+.emptyCartTitle {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.55556;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #1f1b1a;
+  padding-right: 20px;
+  margin-bottom: 16px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 1.4;
+    padding-right: 16px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 24px;
+    line-height: 1.33333;
+  }
+}
+
+.emptyCartText {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #1f1b1a;
+  padding-right: 20px;
+  margin-bottom: 120px;
+
+  @media screen and (min-width: 768px) {
+    padding-right: 16px;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 1.55556;
+  }
+}
+
+.borderWrapper {
+  padding-right: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding-right: 16px;
+  }
+}
+
+.emptyCartBorder {
+  height: 1px;
+  width: 335px;
+  background-color: #858585;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 576px;
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1088px;
+    margin-bottom: 32px;
+  }
+}
+
+.emptyCartBottomWrapper {
+  padding-right: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding-right: 16px;
+    display: flex;
+    justify-content: center;
   }
 }

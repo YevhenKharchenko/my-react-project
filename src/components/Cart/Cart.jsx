@@ -73,6 +73,11 @@ const Cart = ({ handleModal }) => {
     setItems(updatedItems);
   };
 
+  const handleDelete = (id) => {
+    const updatedItems = items.filter((item) => item.id !== id);
+    setItems(updatedItems);
+  };
+
   return (
     isOpen && (
       <section>
@@ -90,72 +95,97 @@ const Cart = ({ handleModal }) => {
           </svg> */}
             </button>
             <h2 className={s.modalTitle}>Ваш кошик</h2>
-            <div className={s.listContainer}>
-              <div className={s.listBorderWrapper}>
-                <ul className={s.list}>
-                  {items.map((item) => {
-                    return (
-                      <li key={item.id} className={s.listItem}>
-                        <div className={s.imgWrapper}>
-                          <img
-                            className={s.itemImg}
-                            src={item.image}
-                            alt={item.title}
-                            width={80}
-                            height={80}
-                          />
-                        </div>
-                        <div className={s.descriptionWrapper}>
-                          <h3 className={s.itemTitle}>{item.title}</h3>
-                          <p className={s.itemVolume}>{item.weight} л</p>
-                          <div className={s.itemQuantityWrapper}>
-                            <p className={s.itemQuantityText}>Кількість</p>
-                            <button
-                              className={s.quantityBtn}
-                              type="button"
-                              onClick={() => {
-                                handleDecrease(item.id);
-                              }}
-                            >
-                              -
-                            </button>
-                            <p className={s.itemQuantity}>{item.quantity}</p>
-                            <button
-                              className={s.quantityBtn}
-                              type="button"
-                              onClick={() => {
-                                handleIncrease(item.id);
-                              }}
-                            >
-                              +
-                            </button>
+            {items.length > 0 ? (
+              <>
+                <div className={s.listContainer}>
+                  <ul className={s.list}>
+                    {items.map((item) => {
+                      return (
+                        <li key={item.id} className={s.listItem}>
+                          <div className={s.imgWrapper}>
+                            <img
+                              className={s.itemImg}
+                              src={item.image}
+                              alt={item.title}
+                              width={80}
+                              height={80}
+                            />
                           </div>
-                          <div className={s.itemBottomWrapper}>
-                            <p className={s.itemPrice}>{item.price} грн</p>
-                            <button className={s.deleteBtn} type="button">
-                              del
-                            </button>
+                          <div className={s.descriptionWrapper}>
+                            <h3 className={s.itemTitle}>{item.title}</h3>
+                            <p className={s.itemVolume}>{item.weight} л</p>
+                            <div className={s.itemQuantityWrapper}>
+                              <p className={s.itemQuantityText}>Кількість</p>
+                              <button
+                                className={s.quantityBtn}
+                                type="button"
+                                onClick={() => {
+                                  handleDecrease(item.id);
+                                }}
+                              >
+                                -
+                              </button>
+                              <p className={s.itemQuantity}>{item.quantity}</p>
+                              <button
+                                className={s.quantityBtn}
+                                type="button"
+                                onClick={() => {
+                                  handleIncrease(item.id);
+                                }}
+                              >
+                                +
+                              </button>
+                            </div>
+                            <div className={s.itemBottomWrapper}>
+                              <p className={s.itemPrice}>{item.price} грн</p>
+                              <button
+                                className={s.deleteBtn}
+                                type="button"
+                                onClick={() => {
+                                  handleDelete(item.id);
+                                }}
+                              >
+                                del
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </div>
-            <div className={s.modalBottomWrapper}>
-              <div className={s.linkWrapper}>
-                <a className={s.modalLink} href="">
-                  Повернутися до покупок
-                </a>
-              </div>
-              <div className={s.modalSubmitWrapper}>
-                <p className={s.totalPrice}>{totalPrice} грн</p>
-                <button className={s.modalSubmitBtn} type="button">
-                  Оформити замовлення
-                </button>
-              </div>
-            </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+                <div className={s.listBorder}></div>
+                <div className={s.modalBottomWrapper}>
+                  <div className={s.linkWrapper}>
+                    <a className={s.modalLink} href="">
+                      Повернутися до покупок
+                    </a>
+                  </div>
+                  <div className={s.modalSubmitWrapper}>
+                    <p className={s.totalPrice}>{totalPrice} грн</p>
+                    <button className={s.modalSubmitBtn} type="button">
+                      Оформити замовлення
+                    </button>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className={s.backgroundWrapper}></div>
+                <p className={s.emptyCartTitle}>Кошик порожній</p>
+                <p className={s.emptyCartText}>
+                  Дивись наш каталог та обирай смачний та корисний мед
+                </p>
+                <div className={s.borderWrapper}>
+                  <div className={s.emptyCartBorder}></div>
+                </div>
+                <div className={s.emptyCartBottomWrapper}>
+                  <button className={s.modalSubmitBtn} type="button">
+                    Купити мед
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
         {/* </Container> */}
