@@ -17,6 +17,18 @@
   padding: 32px 20px 24px 20px;
   border-radius: 0;
   background-color: #fafafa;
+
+  @media screen and (min-width: 768px) {
+    // width: 672px;
+    padding: 48px;
+    border-radius: 24px;
+    background-color: #fafafa;
+  }
+
+  @media screen and (min-width: 1440px) {
+    // width: 1216px;
+    padding: 64px;
+  }
 }
 
 .modalCloseBtn {
@@ -39,6 +51,15 @@
   &:active {
     background-color: #fd9222;
   }
+
+  @media screen and (min-width: 768px) {
+    .modalCloseBtn {
+      top: 24px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+    }
+  }
 }
 
 .modalCloseIcon {
@@ -54,6 +75,16 @@
   letter-spacing: 0.02em;
   text-align: left;
   color: #1f1b1a;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+    font-size: 60px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 64px;
+    font-size: 80px;
+  }
 }
 
 .listContainer {
@@ -63,6 +94,16 @@
   // scrollbar-color: rgb(250, 207, 90) #f4f4f4; /* Track color and thumb color */
   margin-bottom: 20px;
   border-bottom: 1px solid #858585;
+
+  @media screen and (min-width: 768px) {
+    height: 628px;
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: 536px;
+    margin-bottom: 32px;
+  }
 }
 
 .listContainer::-webkit-scrollbar {
@@ -81,6 +122,14 @@
   width: 335px;
   padding: 0;
   margin: 0;
+
+  @media screen and (min-width: 768px) {
+    width: 576px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1088px;
+  }
 }
 
 .listItem {
@@ -96,21 +145,53 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media screen and (min-width: 768px) {
+    height: 216px;
+    width: 576px;
+    margin-bottom: 24px;
+    border-radius: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1088px;
+  }
 }
 
 .imgWrapper {
   border-radius: 24px;
   overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+  }
 }
 
 .itemImg {
   width: 80px;
   height: 80px;
+
+  @media screen and (min-width: 768px) {
+    width: 204px;
+    height: 216px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 216px;
+  }
 }
 
 .descriptionWrapper {
   padding: 16px;
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    padding: 16px 16px 16px 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 24px 24px 24px 32px;
+    flex-grow: 1;
+  }
 }
 
 .itemTitle {
@@ -121,6 +202,17 @@
   letter-spacing: 0.02em;
   color: #1f1b1a;
   margin-bottom: 8px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 24px;
+    line-height: 1.33333;
+  }
 }
 
 .itemVolume {
@@ -131,6 +223,15 @@
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #1f1b1a;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 1.55556;
+  }
 }
 
 .itemQuantityWrapper {
@@ -138,10 +239,35 @@
   align-items: center;
   gap: 4px;
   margin-bottom: 8px;
+
+  @media screen and (min-width: 768px) {
+    gap: 16px;
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 1.55556;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 18px;
+  }
 }
 
 .itemQuantityText {
   display: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.55556;
+  letter-spacing: 0.04em;
+  color: #1f1b1a;
+  margin-right: 32px;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+    display: block;
+  }
 }
 
 .quantityBtn {
@@ -158,6 +284,16 @@
   letter-spacing: 0.04em;
   text-align: center;
   color: #1f1b1a;
+
+  @media screen and (min-width: 768px) {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    line-height: 1.55556;
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 }
 
 .itemPrice {
@@ -167,6 +303,14 @@
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #1f1b1a;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 1.55556;
+  }
 }
 
 .deleteBtn {
@@ -178,10 +322,38 @@
   background-color: transparent;
   outline: none;
   border: none;
+
+  @media screen and (min-width: 768px) {
+    width: 28px;
+    height: 28px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    bottom: 24px;
+    right: 24px;
+  }
+}
+
+.modalBottomWrapper {
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .linkWrapper {
   margin-bottom: 12px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 0;
+  }
 }
 
 .modalLink {
@@ -191,6 +363,27 @@
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #1f1b1a;
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 1.55556;
+  }
+}
+
+.modalSubmitWrapper {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 32px;
+  }
 }
 
 .totalPrice {
@@ -202,6 +395,16 @@
   color: #1f1b1a;
   text-align: right;
   margin-bottom: 12px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 24px;
+    line-height: 1.33333;
+    margin-bottom: 0;
+  }
 }
 
 .modalSubmitBtn {
@@ -221,222 +424,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-@media (min-width: 768px) {
-  .modalContainer {
-    // width: 672px;
-    // height: 100%;
-    padding: 48px;
-    border-radius: 24px;
-    background-color: #fafafa;
-  }
-
-  .modalCloseBtn {
-    top: 24px;
-    right: 24px;
-    width: 40px;
-    height: 40px;
-  }
-
-  .modalTitle {
-    margin-bottom: 32px;
-    font-size: 32px;
-  }
-
-  .listContainer {
-    height: 628px;
-    overflow-y: auto;
-    margin-bottom: 24px;
-  }
-
-  .list {
-    width: 576px;
-  }
-
-  .listItem {
-    height: 216px;
-    width: 576px;
-    margin-bottom: 24px;
-    border-radius: 24px;
-  }
-
-  .imgWrapper {
-    border-radius: 24px;
-  }
-
-  .itemImg {
-    width: 204px;
-    height: 216px;
-  }
-
-  .descriptionWrapper {
-    padding: 16px 16px 16px 24px;
-  }
-
-  .itemTitle {
-    font-size: 20px;
-    line-height: 1.4;
-    margin-bottom: 16px;
-  }
-
-  .itemVolume {
-    margin-bottom: 16px;
-  }
-
-  .itemQuantityWrapper {
-    gap: 16px;
-    margin-bottom: 16px;
-    font-size: 18px;
-    line-height: 1.55556;
-  }
-
-  .quantityBtn {
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
-    line-height: 1.55556;
-  }
-
-  .deleteBtn {
-    width: 28px;
-    height: 28px;
-  }
-
-  .modalBottomWrapper {
-  }
-
-  .linkWrapper {
-    margin-bottom: 16px;
-  }
-
-  .modalSubmitWrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .totalPrice {
-    text-align: right;
-    margin-bottom: 0;
-  }
-
-  .modalSubmitBtn {
+  @media screen and (min-width: 768px) {
     width: 255px;
   }
-}
 
-@media (min-width: 1440px) {
-  .modalContainer {
-    // width: 1216px;
-    // height: 100%;
-    padding: 64px;
-  }
-
-  .modalTitle {
-    margin-bottom: 64px;
-    font-size: 80px;
-  }
-
-  .listContainer {
-    height: 536px;
-    margin-bottom: 32px;
-  }
-
-  .list {
-    width: 1088px;
-  }
-
-  .listItem {
-    height: 216px;
-    width: 1088px;
-  }
-
-  .itemImg {
-    width: 216px;
-  }
-
-  .descriptionWrapper {
-    padding: 24px 24px 24px 32px;
-    flex-grow: 1;
-  }
-
-  .itemTitle {
-    font-size: 24px;
-    line-height: 1.33333;
-  }
-
-  .itemVolume {
-    margin-bottom: 16px;
-    font-size: 18px;
-    line-height: 1.55556;
-  }
-
-  .itemQuantityWrapper {
-    margin-bottom: 18px;
-    line-height: 1.55556;
-  }
-
-  .itemQuantityText {
-    display: block;
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.55556;
-    letter-spacing: 0.04em;
-    color: #1f1b1a;
-    margin-right: 32px;
-  }
-
-  .quantityBtn {
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
-    line-height: 1.55556;
-  }
-
-  .itemPrice {
-    font-size: 18px;
-    line-height: 1.55556;
-  }
-
-  .deleteBtn {
-    width: 28px;
-    height: 28px;
-    bottom: 24px;
-    right: 24px;
-  }
-
-  .modalBottomWrapper {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .linkWrapper {
-    margin-bottom: 0;
-  }
-
-  .modalLink {
-    font-size: 18px;
-    line-height: 1.55556;
-  }
-
-  .modalSubmitWrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .totalPrice {
-    font-size: 24px;
-    line-height: 1.33333;
-    text-align: right;
-    margin-bottom: 0;
-  }
-
-  .modalSubmitBtn {
+  @media screen and (min-width: 1440px) {
     font-size: 18px;
     line-height: 1.55556;
     width: 279px;
