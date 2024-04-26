@@ -8,7 +8,7 @@ import { TaskList } from "./components/TaskList";
 import { TaskForm } from "./components/TaskForm";
 import { AppBar } from "./components/AppBar";
 import { Layout } from "./components/Layout";
-import Modal from "./components/Modal/Modal";
+import Cart from "./components/Cart/Cart";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ export const App = () => {
       {isLoading && !error && <b>Request in progress...</b>}
       <TaskList />
       <button onClick={handleModal}>Open modal</button>
-      {isOpen && <Modal handleModal={handleModal} />}
+      {isOpen && <Cart handleModal={handleModal} />}
     </Layout>
   );
 };
